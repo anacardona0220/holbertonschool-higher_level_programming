@@ -8,3 +8,6 @@ def square_matrix_simple(matrix=[]):
             row_2.append(square)
         matrix_2.append(row_2)
     return matrix_2
+
+# return list(map(lambda row: list(map(lambda num: num ** 2, row)), matrix))
+
