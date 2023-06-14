@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 '''
-is a funtion that recive two integer and return the add 
+is a funtion that recive two integer and return the add
 '''
 
 
 def add_integer(a, b=98):
-    ''' this is a funtion that recive two integer 
+    ''' this is a funtion that recive two integer
     args:
         a(int) : is a number, b(int) : is a number
     return:
