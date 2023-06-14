@@ -8,15 +8,14 @@ class Square:
 
     def __init__(self, size=0):
         self.size = size
-        
+
     @property
     def size(self):
         '''returns the size of the square'''
         return self.__size
-        
+
     @size.setter
     def size(self, value):
-        
         '''  to set it
         Args:
             param1 (value): Description of `param1`.'''
