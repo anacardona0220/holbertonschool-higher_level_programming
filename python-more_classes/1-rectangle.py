@@ -9,6 +9,7 @@ class Rectangle:
     """
     This class contain constructor and methods
     """
+
     def __init__(self, width=0, height=0):
         """
         The method constructor:
