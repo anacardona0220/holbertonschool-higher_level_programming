@@ -1,23 +1,33 @@
 #!/usr/bin/python3
-'''class Rectangle that defines a rectangle'''
+"""
+This module define a Rectangle based in the
+previous module
+"""
 
 
 class Rectangle:
-    '''This class contain constructor and methods'''
+    """
+    This class contain constructor and methods
+    """
     def __init__(self, width=0, height=0):
-        '''Constructor'''
-        self.__height = height
-        self.__width = width
+        """
+        The method constructor:
+        Parameters:
+        width: the purpose is set the value
+        height: the purpose is set the value
+        """
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        '''The width of the rectangle'''
+        """The getter parameters: itself"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        '''Set the width of the rectangle'''
-        if not isinstance(value, int):
+        """The setter parameters: value"""
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -25,13 +35,13 @@ class Rectangle:
 
     @property
     def height(self):
-        '''the height of the rectangle'''
+        """The getter parameters: itself"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        '''set the height of the rectangle'''
-        if not isinstance(value, int):
+        """The setter parameters: value"""
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
