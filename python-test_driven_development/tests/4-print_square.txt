@@ -1,0 +1,39 @@
+The ``4-print_square.py`` module
+============================
+Using ``4-print_square.py``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the print_square function in the 4-print_square module.
+First import ``print_square`` from the ``4-print_square`` module:
+
+    Test 00 Open 4-print_square
+    >>> print_square = __import__('4-print_square').print_square
+
+    
+
+Now test:
+    Test 01: size is integer > 0 passed
+    >>> print_square(3)
+    ###
+    ###
+    ###
+    
+    Test 02: size is float
+    >>> print_square(3.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    Test 03: zero arguments passed
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+    Test 04: string arguments passed
+    >>> print_square("Hello")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    Test 05: negative size passed
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
