@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 '''a function that prints My name is <first name> <last name>'''
-    
-    
+
+
 def matrix_divided(matrix, div):
     """ Check if matrix is a list of lists of integers or floats"""
-    
 
     if not all(isinstance(row, list) for row in matrix) or not all(
-            isinstance(num, (int, float)) for row in matrix for num in row):
+            isinstance(num, (int, float)) for row in matrix for num in row
+    ):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
 
