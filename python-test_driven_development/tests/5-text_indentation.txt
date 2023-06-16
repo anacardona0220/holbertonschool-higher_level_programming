@@ -7,10 +7,27 @@ It contains a test for the text_indentation function in the 5-text_indentation m
 First import ``text_indentation`` from the ``5-text_indentation`` module:
 
     Test 00 Open 5-text_indentation
-    >>> text_indentation = _import_('5-text_indentation').text_indentation
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 
 None test:
     test 01: One string passed
     >>> text_indentation("ana")
     ana
+
+    Test 02: integer arguments passed
+    >>> text_indentation(9)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    Test 03: zero arguments passed
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    Test 04: detect line breaks passed
+    >>> text_indentation("Hello\n\nThere.")
+    Hello
+    <BLANKLINE>
+    There.
+    <BLANKLINE>
