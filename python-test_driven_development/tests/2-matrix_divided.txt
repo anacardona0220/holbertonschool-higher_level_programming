@@ -1,6 +1,6 @@
 The ``2-matrix_divided.py`` module
 ============================
-Using ``matrix_divided``
+Using ``matrix_divided.py``
 ---------------------
 This is a text file in reStructuredText format.
 It contains a test for the matrix_divided function in the 2-matrix_divided module.

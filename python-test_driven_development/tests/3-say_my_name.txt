@@ -1,0 +1,42 @@
+The ``3-say_my_name.py`` module
+============================
+Using ``3-say_my_name.py``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the say_my_name function in the 3-say_my_named module.
+First import ``say_my_name`` from the ``3-say_my_name`` module:
+
+    Test 00 Open 3-say_my_name
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    
+
+Now test:
+    Test 01: zero arguments passed
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+    
+    Test 02: One integer with str passed
+    >>> say_my_name(2, 'ana')
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    Test 03: One None and str passed
+    >>> say_my_name(None, 'hello')
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    Test 04: Two number passed
+    >>> say_my_name(3, 2)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    Test 05: test arguments being strings
+    >>> say_my_name("Carlos", "Montoya")
+    My name is Carlos Montoya
+
+    Test 06: test second argument being Null
+    >>> say_my_name("Carlos", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
