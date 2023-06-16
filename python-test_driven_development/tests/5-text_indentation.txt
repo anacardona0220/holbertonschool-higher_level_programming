@@ -1,0 +1,16 @@
+The ``5-text_indentation.py`` module
+============================
+Using ``text_indentation.py``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the text_indentation function in the 5-text_indentation module.
+First import ``text_indentation`` from the ``5-text_indentation`` module:
+
+    Test 00 Open 5-text_indentation
+    >>> text_indentation = _import_('5-text_indentation').text_indentation
+
+
+None test:
+    test 01: One string passed
+    >>> text_indentation("ana")
+    ana
