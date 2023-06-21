@@ -1,0 +1,64 @@
+The ``1-my_list.py`` module
+============================
+Using ``MyList``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the MyList function in the 1-my_list.py module.
+First import ``MyList`` from the ``1-my_list.py`` module:
+   
+   Test 00 Open 1-my_list.py
+   >>> MyList = __import__('1-my_list').MyList
+   >>> my_list = MyList()
+
+Now test:
+   Test 01: list type passed
+   >>> print(type(my_list))
+   <class '1-my_list.MyList'>
+   
+   Test 02: list passed
+   >>> my_list = MyList([1, 2, 3])
+   >>> print(my_list)
+   [1, 2, 3]
+   
+   Test 03: list NULL passed
+   >>> my_list.append(NULL)
+   Traceback (most recent call last):
+   NameError: name 'NULL' is not defined
+   
+   Test 04: list add passed
+   >>> my_list = MyList()
+   >>> my_list.append(3)
+   >>> my_list.append(2)
+   >>> my_list.append(1)
+   >>> my_list.print_sorted()
+   [1, 2, 3]
+   
+   Test 05: Zero arguments passed
+   >>> my_list = MyList()
+   >>> my_list.print_sorted()
+   []
+   
+   Test 06: Infinite arguments passed
+   >>> my_list.append(int('inf'))
+   Traceback (most recent call last):
+   ValueError: invalid literal for int() with base 10: 'inf'
+   
+   Test 07: positives integers passed
+   >>> MyList = __import__('1-my_list').MyList
+   >>> my_list = MyList()
+   >>> isinstance(my_list, list)
+   True
+   
+   Test 08: negative values passed
+   >>> my_list = MyList()
+   >>> my_list.append(3)
+   >>> my_list.append(2)
+   >>> my_list.append(1)
+   >>> my_list.append(-15)
+   >>> my_list.print_sorted()
+   [-15, 1, 2, 3]
+   
+   Test 09: list None passed
+   >>> my_list.append(None)
+   Traceback (most recent call last):
+   TypeError: 'None' object is not iterable
