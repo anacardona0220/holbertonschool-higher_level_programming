@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""object is an instance of a class that inherited"""
+"""object is exactly an instance of the specified class """
 
 
-def is_kind_of_class(obj, a_class):
+def is_same_class(self, a_class):
     """Method that return True if an object is an instance of a class"""
-    return isinstance(obj, a_class)
+    return type(self) is a_class
