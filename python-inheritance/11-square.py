@@ -34,4 +34,4 @@ class Square(Rectangle):
             Returns a string representation of the square.
 
             """
-            return "[Square] {}/{}".format(self.__width, self.__height)
+            return f"[Square] {self.__size}/{self.__size}"
