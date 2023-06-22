@@ -25,13 +25,13 @@ class Square(Rectangle):
         Raises:
             ValueError: If size is not a positive integer.
         """
-        self.integer_validator("size", size)
+        self.integer_validator('size', size)
         self.__size = size
         super().__init__(size, size)
 
-        def __str__(self, size):
-            """
-            Returns a string representation of the square.
+    def __str__(self):
+        """
+        Returns a string representation of the square.
 
-            """
-            return f"[Square] {self.__size}/{self.__size}"
+        """
+        return f"[Square] {self.__size}/{self.__size}"
