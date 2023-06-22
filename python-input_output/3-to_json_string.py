@@ -15,3 +15,5 @@ def to_json_string(my_obj):
     """
     json_string = json.dumps(my_obj)
     return json_string
+#Escribe una función que devuelva la 
+#representación JSON de un objeto (cadena):

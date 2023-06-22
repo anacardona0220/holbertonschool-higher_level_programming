@@ -15,3 +15,5 @@ def from_json_string(my_str):
     """
     obj = json.loads(my_str)
     return obj
+#Escribe una función que devuelva un objeto (estructura de datos Python)
+# representado por una cadena JSON:
