@@ -17,10 +17,9 @@ class Rectangle(Base):
         Args:
             width (int): Ancho del rectángulo.
             height (int): Altura del rectángulo.
-            x (int, optional): Posición x del rectángulo. Valor predeterminado es 0.
-            y (int, optional): Posición y del rectángulo. Valor predeterminado es 0.
-            id (int, optional): ID opcional para asignar al rectángulo. Si no se proporciona, se genera automáticamente.
-
+            x(int, optional): Posición x del rectángulo.
+            y(int, optional): Posición y del rectángulo.
+            id (int, optional): ID opcional para asignar al rectángulo.
         Attributes:
             width (int): Ancho del rectángulo.
             height (int): Altura del rectángulo.
