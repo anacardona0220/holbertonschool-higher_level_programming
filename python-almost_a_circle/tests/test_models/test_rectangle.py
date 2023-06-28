@@ -34,6 +34,16 @@ class RectangleTestCase(unittest.TestCase):
             rectangle6 = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
             rectangle7 = Rectangle(1, 2, 3, "4")
+        with self.assertRaises(ValueError):
+            rectangle7 = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            rectangle7 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            rectangle7 = Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            rectangle7 = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            rectangle7 = Rectangle(1, 2, 3, -4)
         # with self.assertRaises(TypeError):
         #     rectangle8 = Rectangle(1,2,3,4,5)
 
