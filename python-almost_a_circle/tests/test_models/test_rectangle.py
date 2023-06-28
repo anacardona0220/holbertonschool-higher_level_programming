@@ -40,5 +40,20 @@ class RectangleTestCase(unittest.TestCase):
         area = rectangle9.area()
         self.assertEqual(area, 12)
         
+    def test_display_calculate(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+            
+        rectangle10 = Rectangle(2,6)
+        display = rectangle10.area()
+        self.assertEqual(display, 12)
+       
+        
+        # display()` without `x` and `y`
+		# `display()` without `y`
+		# `display()`
+        
 if __name__ == '__main__':
     unittest.main()
