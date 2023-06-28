@@ -23,6 +23,15 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(rectangle3.height, 2)
         self.assertEqual(rectangle3.x, 3)
         self.assertEqual(rectangle3.y, 4)
-
+        
+    def test_invalid_parameters(self):
+        with self.assertRaises(TypeError):
+            rectangle4 = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            rectangle5 = Rectangle(1,"2")
+        with self.assertRaises(TypeError):
+            rectangle6 = Rectangle(1,2,"3")
+        with self.assertRaises(TypeError):
+            rectangle7 = Rectangle(1,2,3,"4")
 if __name__ == '__main__':
     unittest.main()
