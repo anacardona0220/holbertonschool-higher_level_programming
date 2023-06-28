@@ -1,6 +1,7 @@
 import unittest
 from models.rectangle import Rectangle
 
+
 class RectangleTestCase(unittest.TestCase):
     def test_valid_parameters(self):
         # Requirement 12: Rectangle(1, 2)
@@ -23,37 +24,31 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(rectangle3.height, 2)
         self.assertEqual(rectangle3.x, 3)
         self.assertEqual(rectangle3.y, 4)
-        
+
     def test_invalid_parameters(self):
         with self.assertRaises(TypeError):
             rectangle4 = Rectangle("1", 2)
         with self.assertRaises(TypeError):
-            rectangle5 = Rectangle(1,"2")
+            rectangle5 = Rectangle(1, "2")
         with self.assertRaises(TypeError):
-            rectangle6 = Rectangle(1,2,"3")
+            rectangle6 = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
-            rectangle7 = Rectangle(1,2,3,"4")
+            rectangle7 = Rectangle(1, 2, 3, "4")
         # with self.assertRaises(TypeError):
         #     rectangle8 = Rectangle(1,2,3,4,5)
+
     def test_area_calculate(self):
-        rectangle9 = Rectangle(2,6)
+        rectangle9 = Rectangle(2, 6)
         area = rectangle9.area()
         self.assertEqual(area, 12)
-        
+
     def test_display_calculate(self):
         with self.assertRaises(ValueError):
             Rectangle(0, 2)
         with self.assertRaises(ValueError):
             Rectangle(1, 0)
-            
-        rectangle10 = Rectangle(2,6)
-        display = rectangle10.area()
-        self.assertEqual(display, 12)
-       
-        
-        # display()` without `x` and `y`
-		# `display()` without `y`
-		# `display()`
-        
+
+
+
 if __name__ == '__main__':
     unittest.main()

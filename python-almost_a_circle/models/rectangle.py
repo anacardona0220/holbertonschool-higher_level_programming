@@ -97,3 +97,13 @@ class Rectangle(Base):
         """Imprime en stdout la representación visual del rectángulo."""
         for _ in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """
+        Método para obtener una representación en cadena del objeto Rectangle.
+
+        Returns:
+            str: Representación en cadena del objeto Rectangle.
+        """
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.width}/{self.height}")
