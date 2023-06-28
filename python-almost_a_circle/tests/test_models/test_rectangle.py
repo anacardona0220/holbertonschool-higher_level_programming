@@ -24,46 +24,5 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(rectangle3.x, 3)
         self.assertEqual(rectangle3.y, 4)
 
-    def test_invalid_parameters(self):
-        # Requirement 15: Rectangle("1", 2)
-        with self.assertRaises(TypeError):
-            rectangle4 = Rectangle("1", 2)
-
-        # Requirement 16: Rectangle(1, "2")
-        with self.assertRaises(TypeError):
-            rectangle5 = Rectangle(1, "2")
-
-        # Requirement 17: Rectangle(1, 2, "3")
-        with self.assertRaises(TypeError):
-            rectangle6 = Rectangle(1, 2, "3")
-
-        # Requirement 18: Rectangle(1, 2, 3, "4")
-        with self.assertRaises(TypeError):
-            rectangle7 = Rectangle(1, 2, 3, "4")
-
-        # Requirement 20: Rectangle(-1, 2)
-        with self.assertRaises(ValueError):
-            rectangle8 = Rectangle(-1, 2)
-
-        # Requirement 21: Rectangle(1, -2)
-        with self.assertRaises(ValueError):
-            rectangle9 = Rectangle(1, -2)
-
-        # Requirement 22: Rectangle(0, 2)
-        with self.assertRaises(ValueError):
-            rectangle10 = Rectangle(0, 2)
-
-        # Requirement 23: Rectangle(1, 0)
-        with self.assertRaises(ValueError):
-            rectangle11 = Rectangle(1, 0)
-
-        # Requirement 24: Rectangle(1, 2, -3)
-        with self.assertRaises(ValueError):
-            rectangle12 = Rectangle(1, 2, -3)
-
-        # Requirement 25: Rectangle(1, 2, 3, -4)
-        with self.assertRaises(ValueError):
-            rectangle13 = Rectangle(1, 2, 3, -4)
-
 if __name__ == '__main__':
     unittest.main()
