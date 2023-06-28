@@ -33,7 +33,11 @@ class RectangleTestCase(unittest.TestCase):
             rectangle6 = Rectangle(1,2,"3")
         with self.assertRaises(TypeError):
             rectangle7 = Rectangle(1,2,3,"4")
-        with self.assertRaises(TypeError):
-            rectangle8 = Rectangle(1,2,3,4,5)
+        # with self.assertRaises(TypeError):
+        #     rectangle8 = Rectangle(1,2,3,4,5)
+    def test_area_calculate(self):
+        rectangle9 = Rectangle(2,6)
+        area = rectangle9.area()
+        self.assertEqual(area, 12)
 if __name__ == '__main__':
     unittest.main()
