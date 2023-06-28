@@ -39,5 +39,6 @@ class RectangleTestCase(unittest.TestCase):
         rectangle9 = Rectangle(2,6)
         area = rectangle9.area()
         self.assertEqual(area, 12)
+        
 if __name__ == '__main__':
     unittest.main()
