@@ -48,7 +48,9 @@ class RectangleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 0)
 
-
+    def test_str(self):
+        rectan = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(str(rectan), "[Rectangle] (5) 3/4 - 1/2")
 
 if __name__ == '__main__':
     unittest.main()
