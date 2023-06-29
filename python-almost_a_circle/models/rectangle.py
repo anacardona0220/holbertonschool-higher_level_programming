@@ -100,7 +100,7 @@ class Rectangle(Base):
 
     # def __str__(self):
     #     """
-    #     Método para obtener una representación en cadena del objeto Rectangle.
+    #     Método obtener representación en cadena del objeto Rectangle.
 
     #     Returns:
     #         str: Representación en cadena del objeto Rectangle.
