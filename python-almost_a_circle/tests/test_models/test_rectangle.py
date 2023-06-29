@@ -74,9 +74,8 @@ class RectangleTestCase(unittest.TestCase):
         for i in range(self.height):
             rectangle += (" " * self.x)
             rectangle += ("#" * self.width) + "\n"
-            
-        print(rectangle, end='')
 
+        print(rectangle, end='')
 
     # def setUp(self):
     #     # Runs before every test
@@ -106,6 +105,25 @@ class RectangleTestCase(unittest.TestCase):
         rectan = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(rectan), "[Rectangle] (5) 3/4 - 1/2")
 
+    def update(self, *args, **kwargs):
+        """ update method """
+        if args is not None and len(args) is not 0:
+            list_atr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ method that returs a dictionary with properties """
+        list_atr = ['id', 'width', 'height', 'x', 'y']
+        dict_res = {}
+
+        for key in list_atr:
+            dict_res[key] = getattr(self, key)
+
+        return dict_res
 
 if __name__ == '__main__':
     unittest.main()
