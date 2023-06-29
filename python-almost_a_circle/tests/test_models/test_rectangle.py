@@ -68,14 +68,13 @@ class RectangleTestCase(unittest.TestCase):
         expected_output = "  ####\n  ####\n  ####\n  ####\n  ####\n"
         self.assertEqual(rect.display(), expected_output)
 
-    def __str__(self):
-        """ str special method """
-        str_rectangle = "[Rectangle] "
-        str_id = "({}) ".format(self.id)
-        str_xy = "{}/{} - ".format(self.x, self.y)
-        str_wh = "{}/{}".format(self.width, self.height)
+    def display(self):
+        """ displays a rectangle """
+        rectangle = self.y * "\n"
+        for i in range(self.height):
+            rectangle += (" " * self.x)
+            rectangle += ("#" * self.width) + "\n"
 
-        return str_rectangle + str_id + str_xy + str_wh
 
     # def setUp(self):
     #     # Runs before every test
