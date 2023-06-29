@@ -93,17 +93,54 @@ class Rectangle(Base):
         '''calculate to area of rectangle'''
         return self.__width * self.__height
 
+    # def display(self):
+    #     """Imprime en stdout la representación visual del rectángulo."""
+    #     for _ in range(self.height):
+    #         print("#" * self.width)
+
+    # def __str__(self):
+    #     """
+    #     Método para obtener una representación en cadena del objeto Rectangle.
+
+    #     Returns:
+    #         str: Representación en cadena del objeto Rectangle.
+    #     """
+    #     return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+    #             f"{self.width}/{self.height}")
     def display(self):
-        """Imprime en stdout la representación visual del rectángulo."""
-        for _ in range(self.height):
-            print("#" * self.width)
+        """ displays a rectangle """
+        rectangle = self.y * "\n"
+        for i in range(self.height):
+            rectangle += (" " * self.x)
+            rectangle += ("#" * self.width) + "\n"
+
+        print(rectangle, end='')
 
     def __str__(self):
-        """
-        Método para obtener una representación en cadena del objeto Rectangle.
+        """ str special method """
+        str_rectangle = "[Rectangle] "
+        str_id = "({}) ".format(self.id)
+        str_xy = "{}/{} - ".format(self.x, self.y)
+        str_wh = "{}/{}".format(self.width, self.height)
 
-        Returns:
-            str: Representación en cadena del objeto Rectangle.
-        """
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
-                f"{self.width}/{self.height}")
+        return str_rectangle + str_id + str_xy + str_wh
+
+    def update(self, *args, **kwargs):
+        """ update method """
+        if args is not None and len(args) is not 0:
+            list_atr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ method that returs a dictionary with properties """
+        list_atr = ['id', 'width', 'height', 'x', 'y']
+        dict_res = {}
+
+        for key in list_atr:
+            dict_res[key] = getattr(self, key)
+
+        return dict_res
