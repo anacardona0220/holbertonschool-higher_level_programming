@@ -74,6 +74,8 @@ class RectangleTestCase(unittest.TestCase):
         for i in range(self.height):
             rectangle += (" " * self.x)
             rectangle += ("#" * self.width) + "\n"
+            
+        print(rectangle, end='')
 
 
     # def setUp(self):
