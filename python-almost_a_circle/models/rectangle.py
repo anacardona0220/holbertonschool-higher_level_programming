@@ -1,123 +1,145 @@
 #!/usr/bin/python3
-'''Write the first class rectangle'''
+"""Define class rectangle"""
+
+
 from models.base import Base
 
 
-class Rectangle(Base):
-    """
-    Clase Rectangle que hereda de la clase Base.
+"""define class rectangle with base class"""
 
-    Representa un rectángulo con ancho, altura, posición x e y.
-    """
+
+class Rectangle(Base):
+    """define init in class rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        Constructor de la clase Rectangle.
-
-        Args:
-            width (int): Ancho del rectángulo.
-            height (int): Altura del rectángulo.
-            x(int, optional): Posición x del rectángulo.
-            y(int, optional): Posición y del rectángulo.
-            id (int, optional): ID opcional para asignar al rectángulo.
-        Attributes:
-            width (int): Ancho del rectángulo.
-            height (int): Altura del rectángulo.
-            x (int): Posición x del rectángulo.
-            y (int): Posición y del rectángulo.
-            id (int): ID del rectángulo.
-        """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
+
+    """get width"""
 
     @property
     def width(self):
         return self.__width
 
-    @width.setter
-    def width(self, value):
-        if isinstance(value, int):
-            if value > 0:
-                self.__width = value
-            else:
-                raise ValueError("width must be > 0")
-        else:
-            raise TypeError("width must be an integer")
+    """get height"""
 
     @property
     def height(self):
         return self.__height
 
-    @height.setter
-    def height(self, value):
-        if isinstance(value, int):
-            if value > 0:
-                self.__height = value
-            else:
-                raise ValueError("height must be > 0")
-        else:
-            raise TypeError("height must be an integer")
+    """get x"""
 
     @property
     def x(self):
         return self.__x
 
-    @x.setter
-    def x(self, value):
-        if isinstance(value, int):
-            if value >= 0:
-                self.__x = value
-            else:
-                raise ValueError("x must be >= 0")
-        else:
-            raise TypeError("x must be an integer")
+    """get y"""
 
     @property
     def y(self):
         return self.__y
 
+    """setter width"""
+
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+
+    """setter height"""
+
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
+
+    """setter x"""
+
+    @x.setter
+    def x(self, value):
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        elif value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    """Setter y"""
+
     @y.setter
     def y(self, value):
-        if isinstance(value, int):
-            if value >= 0:
-                self.__y = value
-            else:
-                raise ValueError("y must be >= 0")
-        else:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
+        elif value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
+
+    """Adding Area to the rectangle"""
 
     def area(self):
-        '''calculate to area of rectangle'''
+        """Add a new area to the rectangle"""
         return self.__width * self.__height
 
+    """Adding display # in the rectangle"""
+
     def display(self):
-        """Imprime en stdout la representación visual del rectángulo."""
-        for _ in range(self.y):
+        """adding loops for the print rectangle"""
+        for _ in range(self.__y):
             print()
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
+
+    """Adding __str__ to the print rectangle"""
 
     def __str__(self):
-        """
-        Método obtener representación en cadena del objeto Rectangle.
+        """print dimensions of the print rectangle"""
+        dimensions = f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) " + dimensions
 
-        Returns:
-            str: Representación en cadena del objeto Rectangle.
-        """
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
-                f"{self.width}/{self.height}")
+    """Update the print rectangle"""
 
-    def update(self, *args):
-        if len(args) >= 1:
+    def update(self, *args, **kwargs):
+        """print dimensions of the print rectangle"""
+        if len(args) > 0:
             self.id = args[0]
-        if len(args) >= 2:
+        if len(args) > 1:
             self.width = args[1]
-        if len(args) >= 3:
+        if len(args) > 2:
             self.height = args[2]
-        if len(args) >= 4:
+        if len(args) > 3:
             self.x = args[3]
-        if len(args) >= 5:
+        if len(args) > 4:
             self.y = args[4]
+
+        if len(args) == 0 or len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
+
+    """adding dictionary in the rectangle"""
+
+    def to_dictionary(self):
+        """create dictionary"""
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
