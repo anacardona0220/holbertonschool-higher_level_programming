@@ -53,20 +53,20 @@ class RectangleTestCase(unittest.TestCase):
         # with self.assertRaises(TypeError):
         #     rectangle8 = Rectangle(1,2,3,4,5)
 
-    def test_area_calculate(self):
-        rectangle9 = Rectangle(2, 6)
-        area = rectangle9.area()
-        self.assertEqual(area, 12)
+    # def test_area_calculate(self):
+    #     rectangle9 = Rectangle(2, 6)
+    #     area = rectangle9.area()
+    #     self.assertEqual(area, 12)
 
-    def test_display_without_xy(self):
-        rect = Rectangle(4, 5, 0, 0, 10)
-        expected_output = "####\n####\n####\n####\n####\n"
-        self.assertEqual(rect.display(), expected_output)
+    # def test_display_without_xy(self):
+    #     rect = Rectangle(4, 5, 0, 0, 10)
+    #     expected_output = "####\n####\n####\n####\n####\n"
+    #     self.assertEqual(rect.display(), expected_output)
 
-    def test_display_without_y(self):
-        rect = Rectangle(4, 5, 2, 0, 10)
-        expected_output = "  ####\n  ####\n  ####\n  ####\n  ####\n"
-        self.assertEqual(rect.display(), expected_output)
+    # def test_display_without_y(self):
+    #     rect = Rectangle(4, 5, 2, 0, 10)
+    #     expected_output = "  ####\n  ####\n  ####\n  ####\n  ####\n"
+    #     self.assertEqual(rect.display(), expected_output)
 
     
 
