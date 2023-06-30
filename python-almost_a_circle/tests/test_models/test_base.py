@@ -6,20 +6,15 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class BaseTestCase(unittest.TestCase):
-    def test_assigning_id(self):
-        # Requirement 1: Base() for assigning automatically an ID
-        obj1 = Base()
-        self.assertEqual(obj1.id, 1)
+class TestBase(unittest.TestCase):
 
-        # Requirement 2: Base() for assigning automatically an ID + 1 of the previous
-        obj2 = Base()
-        self.assertEqual(obj2.id, 2)
-
-    def test_saving_passed_id(self):
-        # Requirement 3: Base(89) saving the ID passed
-        obj3 = Base(89)
-        self.assertEqual(obj3.id, 89)
+    def test_base_id_generation(self):
+        base1 = Base()
+        base2 = Base()
+        base3 = Base(89)
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 2)
+        self.assertEqual(base3.id, 89)
 
     def test_base_to_json_string_none(self):
         json_string = Base.to_json_string(None)
@@ -184,10 +179,12 @@ class TestSquare(unittest.TestCase):
         square2 = Square(7, 4, 5, 2)
         squares = [square1, square2]
 
+
         filename = "Square.json"
         with open(filename, "w") as jsonfile:
             jsonfile.write(Square.to_json_string(
                 [square.to_dictionary() for square in squares]))
+
 
         loaded_squares = Square.load_from_file()
 
